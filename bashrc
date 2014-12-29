@@ -13,9 +13,9 @@ stty -ixon
 
 # ignore duplicates and lines beginning with whitespace in history
 export HISTCONTROL=ignoreboth 
-export HISTSIZE=10000
-export HISTFILESIZE=10000
-export HISTTIMEFORMAT='%y-%m-%d %T%t'
+export HISTSIZE=45000
+export HISTFILESIZE=45000
+export HISTTIMEFORMAT=%y%m%d_%H%M%S%t
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -44,16 +44,13 @@ else
 fi
 unset color_prompt force_color_prompt
 
-# Alias definitions.
-alias ll='ls -la'
-alias la='ls -A'
-alias l='ls -l'
-alias j='jobs -l'
-alias h='history'
-alias cd..='cd ..'
-alias r='fc -s'
+if [ -f ~/.bash_functions ]; then
+    . ~/.bash_functions
+fi
 
-alias screenoff='xset dpms force off'
+if [ -f ~/.bash_private ]; then
+    . ~/.bash_private
+fi
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -76,16 +73,6 @@ fi
 
 # Some enviromental variables
 export EDITOR=vim
+export PAGER=less
 #export PATH="$PATH:~/bin"
 export PYTHONPATH=$HOME/lib/python2.7/
-
-# Command line calculator
-calc(){ awk "BEGIN{ print $* }" ;}
-
-# coles() - displays input files in neat format in less without word wrap
-coles() { column -t -s$'\t' "$@" | less -S; }
-
-# colored ls in pager
-lsp() { ls --color "$@" | less -R; }
-lp() { ls -l --color "$@" | less -R; }
-llp() { ls -al --color "$@" | less -R; }

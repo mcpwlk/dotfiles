@@ -1,7 +1,7 @@
    """ BASIC OPTIONS
 
 set nocp
-
+syntax off
 set number
 set ignorecase
 set smartcase
@@ -23,12 +23,19 @@ cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
 cnoremap <C-P> <Up>
 cnoremap <C-N> <Down>
+cnoremap <C-Q> <C-F>
 
 filetype plugin on
 
    """ GUI OPTIONS
 
-set guifont=10x20
+set guifont=DejaVu\ Sans\ Mono\ 10
+set winaltkeys=no
+
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
 
    """ INDENTATION JUMPING
 
