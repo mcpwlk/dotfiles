@@ -7,14 +7,14 @@ set ignorecase
 set smartcase
 set wildmenu
 
-noremap <F5> :set invwrap<CR>
-noremap <F6> :set invnumber<CR>
-noremap <F7> :if exists("g:syntax_on") <Bar>
+noremap <silent> <F5> :set invwrap<CR>
+noremap <silent> <F6> :set invnumber<CR>
+noremap <silent> <F7> :if exists("g:syntax_on") <Bar>
     \   syntax off <Bar>
     \ else <Bar>
     \   syntax enable <Bar>
     \ endif <CR>
-noremap <F8> :set invlist<CR>
+noremap <silent> <F8> :set invlist<CR>
 
 cnoremap <C-A> <Home>
 cnoremap <C-F> <Right>
@@ -36,6 +36,13 @@ set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
+
+   """ NAVIGATION
+
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
 
    """ INDENTATION JUMPING
 
