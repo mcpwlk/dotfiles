@@ -1,6 +1,9 @@
    """ BASIC OPTIONS
 
 set nocp
+filetype plugin on
+runtime macros/matchit.vim
+
 syntax off
 set number
 set ignorecase
@@ -24,8 +27,6 @@ cnoremap <Esc>f <S-Right>
 cnoremap <C-P> <Up>
 cnoremap <C-N> <Down>
 cnoremap <C-Q> <C-F>
-
-filetype plugin on
 
    """ GUI OPTIONS
 
