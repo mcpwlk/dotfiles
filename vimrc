@@ -9,15 +9,16 @@ set number
 set ignorecase
 set smartcase
 set wildmenu
+set smartindent
 
-noremap <silent> <F5> :set invwrap<CR>
-noremap <silent> <F6> :set invnumber<CR>
+noremap <silent> <F5> :set wrap!<CR>
+noremap <silent> <F6> :set number!<CR>
 noremap <silent> <F7> :if exists("g:syntax_on") <Bar>
     \   syntax off <Bar>
     \ else <Bar>
     \   syntax enable <Bar>
     \ endif <CR>
-noremap <silent> <F8> :set invlist<CR>
+noremap <silent> <F8> :set list!<CR>
 
 cnoremap <C-A> <Home>
 cnoremap <C-F> <Right>
