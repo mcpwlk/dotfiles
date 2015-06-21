@@ -56,4 +56,3 @@ fi
 export EDITOR=vim
 export PAGER=less
 #export PATH="$PATH:~/bin"
-export PYTHONPATH=$HOME/lib/python2.7/
