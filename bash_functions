@@ -40,3 +40,5 @@ alias j='jobs -l'
 alias h='history'
 alias cd..='cd ..'
 alias r='fc -s'
+
+which xclip &> /dev/null && alias xclip='xclip -selection clipboard'
