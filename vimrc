@@ -10,7 +10,10 @@ set ignorecase
 set smartcase
 set wildmenu
 set smartindent
+
 set incsearch
+set hlsearch
+noremap <silent> <C-L> :nohlsearch<CR><C-L>
 
 noremap <silent> <F5> :set wrap!<CR>
 noremap <silent> <F6> :set number!<CR>
