@@ -11,8 +11,8 @@ noremap O :js toggle_bottombar('on')<CR>O
 noremap t :js toggle_bottombar('on')<CR>t
 noremap T :js toggle_bottombar('on')<CR>T
 noremap / :js toggle_bottombar('on')<CR>/
-cnoremap <CR> <CR>:js toggle_bottombar('off')<CR>
-cnoremap <Esc> <Esc>:js toggle_bottombar('off')<CR>
+noremap f :js toggle_bottombar('on')<CR>f
+noremap F :js toggle_bottombar('on')<CR>F
 
 :js << EOF
 function toggle_bottombar(p) {
@@ -32,5 +32,4 @@ function toggle_bottombar(p) {
     bb.style.height = (bb.style.height == '') ? '0px' : '';
     bb.style.overflow = (bb.style.height == '') ? '' : 'hidden';
 }
-toggle_bottombar();
 EOF
