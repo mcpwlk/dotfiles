@@ -162,6 +162,9 @@ bar {
     status_command i3status
 }
 
+# Run compton in the background
+exec --no-startup-id compton -b
+
 # Change background color
 exec --no-startup-id xsetroot -solid '#2D3C64'
 
