@@ -55,4 +55,3 @@ fi
 # Some enviromental variables
 export EDITOR=vim
 export PAGER=less
-#export PATH="$PATH:~/bin"
