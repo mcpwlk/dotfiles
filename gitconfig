@@ -1,0 +1,16 @@
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore-global
+[diff]
+	tool = vimdiff
+[push]
+	default = nothing
+[merge]
+	defaultToUpstream = true
+[alias]
+	ff = merge --ff-only
+	st = status
+	sti = status --ignored
+	diffc = diff --cached
+[include]
+	path = ~/.gitconfig-user
