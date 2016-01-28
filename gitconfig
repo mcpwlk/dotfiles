@@ -12,5 +12,6 @@
 	st = status
 	sti = status --ignored
 	diffc = diff --cached
+	tree = log --oneline --graph --decorate
 [include]
 	path = ~/.gitconfig-user
