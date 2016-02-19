@@ -2,7 +2,12 @@
 	editor = vim
 	excludesfile = ~/.gitignore-global
 [diff]
+	algorithm = patience
 	tool = vimdiff
+[pager]
+	log = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
+	show = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
+	diff = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
 [push]
 	default = nothing
 [merge]
