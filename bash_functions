@@ -1,23 +1,5 @@
-# Command line calculator
-calc ()
-{ awk "BEGIN{ printf $* ; print \"\" }"; }
-
-# coles() - displays input files in neat format in less without word wrap
-function coles() {
-    column -t -s$'\t' "$@" | less -S
-}
-# summate() - sums the given column of an input; if no argument, sums the first column
-function summate { 
-    if [ "$1" = "-c" ]
-    then
-        shift
-        local column=$1
-        shift
-    else
-        local column=1
-    fi
-    awk "{sum+=\$$column} END {print sum}" "$@"
-}
+# ~/.bash_functions: this file contains functions and aliases
+# it is supposed to be sourced in .bashrc
 
 function lp {
     ls -l --color "$@" | less -R
@@ -29,6 +11,18 @@ function llp {
 
 function lsp {
     ls --color "$@" | less -R
+}
+
+# cawk - awk for working with csv files
+function cawk {
+    awk -F, -vOFS=, "$@"
+}
+
+# title() - set title for an enclosing terminal window
+function title {
+    echo -ne "\033]0;"
+    echo -ne "$@"
+    echo -ne "\007"
 }
 
 # Aliases for bash shell
