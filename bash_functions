@@ -18,8 +18,18 @@ function cawk {
     awk -F, -vOFS=, "$@"
 }
 
-# title() - set title for an enclosing terminal window
+# title() - set title for the enclosing terminal window
 function title {
+    _set_title "$@"
+    export _TERMINAL_WINDOW_TITLE="$@"
+}
+
+# untitle() - unset title of the enclosing terminal window
+function untitle {
+    unset _TERMINAL_WINDOW_TITLE
+}
+
+function _set_title {
     echo -ne "\033]0;"
     echo -ne "$@"
     echo -ne "\007"

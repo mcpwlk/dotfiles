@@ -98,5 +98,12 @@ else
 fi
 unset color_prompt force_color_prompt
 
-lastcmd () { title `HISTTIMEFORMAT= history 1 | cut -c8-`; }
-PROMPT_COMMAND=lastcmd
+_set_title_at_prompt () {
+    if [ -z "$_TERMINAL_WINDOW_TITLE" ]
+    then
+        _set_title dir: `pwd`
+    else
+        _set_title "$_TERMINAL_WINDOW_TITLE"
+    fi
+}
+PROMPT_COMMAND=_set_title_at_prompt
