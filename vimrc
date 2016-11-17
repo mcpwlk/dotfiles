@@ -6,6 +6,7 @@ runtime macros/matchit.vim
 
 syntax off
 set number
+set relativenumber
 set ignorecase
 set smartcase
 set wildmenu
@@ -15,8 +16,19 @@ set incsearch
 set hlsearch
 noremap <silent> <C-L> :nohlsearch<CR><C-L>
 
+function! ToggleNumber()
+  if &rnu == 1
+    set nornu
+  elseif &nu == 1
+    set nonu
+  else
+    set nu
+    set rnu
+  endif
+endfunc
+
 noremap <silent> <F5> :set wrap!<CR>
-noremap <silent> <F6> :set number!<CR>
+noremap <silent> <F6> :call ToggleNumber()<CR>
 noremap <silent> <F7> :if exists("g:syntax_on") <Bar>
     \   syntax off <Bar>
     \ else <Bar>
