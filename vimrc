@@ -27,14 +27,14 @@ function! ToggleNumber()
   endif
 endfunc
 
-noremap <silent> <F5> :set wrap!<CR>
-noremap <silent> <F6> :call ToggleNumber()<CR>
-noremap <silent> <F7> :if exists("g:syntax_on") <Bar>
+noremap <silent> <Leader>w :set wrap!<CR>
+noremap <silent> <Leader>n :call ToggleNumber()<CR>
+noremap <silent> <Leader>s :if exists("g:syntax_on") <Bar>
     \   syntax off <Bar>
     \ else <Bar>
     \   syntax enable <Bar>
     \ endif <CR>
-noremap <silent> <F8> :set list!<CR>
+noremap <silent> <Leader>l :set list!<CR>
 
 cnoremap <C-A> <Home>
 cnoremap <C-F> <Right>
