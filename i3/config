@@ -164,5 +164,8 @@ exec --no-startup-id hsetroot -solid '#000910'
 # Run compton in the background
 exec --no-startup-id compton -b -f -D 5
 
+# Set Caps Lock to be another Ctrl
+exec --no-startup-id setxkbmap -option ctrl:nocaps
+
 # NetworkManager applet
 #exec --no-startup-id nm-applet &
