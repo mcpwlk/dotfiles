@@ -1,20 +1,25 @@
    """ BASIC OPTIONS
 
 set nocp
+
 filetype plugin on
 runtime macros/matchit.vim
 
 syntax off
 set number
-set relativenumber
+"set relativenumber
 set ignorecase
 set smartcase
 set wildmenu
 set smartindent
 
+set mouse=a
+
 set incsearch
 set hlsearch
 noremap <silent> <C-L> :nohlsearch<CR><C-L>
+
+set formatoptions=tcql
 
 function! ToggleNumber()
   if &rnu == 1

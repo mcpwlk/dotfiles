@@ -29,6 +29,10 @@ function untitle {
     unset _TERMINAL_WINDOW_TITLE
 }
 
+function ts {
+    date -d "1970-01-01 UTC + $* sec"
+}
+
 function _set_title {
     echo -ne "\033]0;"
     echo -ne "$@"
@@ -44,5 +48,9 @@ alias j='jobs -l'
 alias h='history'
 alias cd..='cd ..'
 alias r='fc -s'
+
+alias g=git
+
+alias gimp=pinta
 
 which xclip &> /dev/null && alias xclip='xclip -selection clipboard'
