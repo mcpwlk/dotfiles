@@ -51,6 +51,4 @@ alias r='fc -s'
 
 alias g=git
 
-alias gimp=pinta
-
 which xclip &> /dev/null && alias xclip='xclip -selection clipboard'
